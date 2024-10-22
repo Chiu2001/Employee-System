@@ -1,0 +1,97 @@
+/* 定義淺木紋背景 */
+body {
+    background: linear-gradient(135deg, #f5f5dc, #d3b88c); /* 淺灰色漸層背景 */
+    color: #3e2723; /* 字體使用深棕色 */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h2 {
+    color: #8d6e63; /* 使用棕色作為標題 */
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.9); /* 白色半透明背景 */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* 輕微陰影效果 */
+    width: 30%;  /* 寬度為 30% */
+    height: auto; /* 高度自適應 */
+    max-width: 500px; /* 設定最大寬度，防止在大螢幕上過於寬 */
+    max-height: 700px; /* 設定最大高度，保持長方形 */
+}
+
+label {
+    color: #8d6e63; /* 棕色標籤 */
+    font-weight: bold;
+}
+
+input[type="email"], input[type="password"], input[type="text"] {
+    background-color: #fde0b9; /* 淺米色背景 */
+    color: #4e342e; /* 深棕色文字 */
+    border: 1px solid #d7ccc8; /* 淺棕色邊框 */
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+input[type="checkbox"] + label {
+    color: #8d6e63; /* 淡棕色 */
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+button {
+    background-color: #bcaaa4; /* 淺棕色按鈕 */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    width: 100%;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #a1887f; /* 更深的棕色作為按鈕 hover 效果 */
+}
+
+.alert {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #d32f2f; /* 鮮紅色警告框 */
+    color: white;
+    border-radius: 5px;
+}
+
+/* 自訂按鈕樣式 */
+.btn-custom {
+    background-color: #bcaaa4; /* 淺棕色按鈕 */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-custom:hover {
+    background-color: #a1887f; /* 更深的棕色作為按鈕 hover 效果 */
+}
+
+/* 增加圖標的樣式 */
+.input-group-text {
+    background-color: #ffe0b2; /* 淺米色背景 */
+    border: 1px solid #d7ccc8; /* 淺棕色邊框 */
+    color: #4e342e; /* 深棕色文字 */
+}
+
+.form-group {
+    margin-bottom: 20px; /* 增加每個表單組之間的間距 */
+}
+

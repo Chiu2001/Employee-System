@@ -1,0 +1,89 @@
+/* 調整表單位置，讓它距離頁面頂部更遠 */
+body {
+    background: linear-gradient(135deg, #f5f5dc, #d3b88c); /* 柔和的米色和淺棕色漸層背景 */
+    color: #3e2723; /* 深棕色字體，與木紋風格搭配 */
+    padding-top: 50px; /* 增加頁面頂部的間距 */
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.9); /* 米色背景，帶點透明度 */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    border: 1px solid #d1b89d; /* 淡棕色邊框，提升質感 */
+}
+
+label {
+    color: #8b5e34; /* 木紋深棕色標籤 */
+    margin-bottom: 10px;
+}
+
+.form-control {
+    background-color: #f7e4d0; /* 柔和米色輸入框背景 */
+    color: #5c3d2e; /* 深棕色字體 */
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.1); /* 內陰影提升質感 */
+}
+
+.form-check-label {
+    color: #8b5e34; /* 木紋風標籤 */
+    margin-right: 20px; /* 增加 gender 選項間的間距 */
+}
+
+button {
+    background-color: #d1b89d; /* 淡棕色按鈕 */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #a67a52; /* 深棕色按鈕當滑鼠懸停時 */
+}
+
+select.form-control {
+    background-color: #f7e4d0; /* 米色下拉式選單背景 */
+    color: #5c3d2e; /* 深棕色字體 */
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.1); /* 內陰影增加質感 */
+}
+
+a {
+    color: #a67a52; /* 棕色連結 */
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Gender, Rank, Team, Role 的排列 */
+.form-group-row {
+    display: flex;
+    justify-content: space-between; /* 平分空間，讓它們按比例排列 */
+}
+
+.form-check-inline {
+    display: inline-block;
+    margin-right: 20px; /* Gender選項的間距 */
+}
+
+/* Save Employee 按鈕 */
+button {
+    background-color: #d1b89d; /* 淡棕色 */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #a67a52; /* 深棕色按鈕當滑鼠懸停時 */
+}

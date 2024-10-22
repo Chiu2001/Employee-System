@@ -1,7 +1,23 @@
 package com.example.system.Entity;
 
-import jakarta.persistence.*;
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
+import org.springframework.format.annotation.DateTimeFormat;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
+
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "employee")
@@ -26,23 +42,35 @@ public class Employee {
     @Column
     private String gender;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
     @JoinColumn(name = "rank_id", nullable = false)
     private Rank rank;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
     @JoinColumn(name = "team_id", nullable = false)
     private Team team;
 
     @Column
     private String role;
 
+    @Column
+    private String status;
+
+
     @Column(name = "join_date")
     @Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date joinDate;
 
+    @OneToMany(mappedBy = "employee", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Expense> expenses = new ArrayList<>(); // 定義員工與多個支出的關聯
+
+    @OneToMany(mappedBy = "employee", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<LeaveRequest> leaveRequest = new ArrayList<>();
+
+    // Constructors
     public Employee(Long id, String name, String email, String password, String phone, String gender, Rank rank,
-            Team team, String role, Date joinDate) {
+                    Team team, String role, String status, Date joinDate, List<Expense> expenses, List<LeaveRequest> leaveRequest) {
         this.id = id;
         this.name = name;
         this.email = email;
@@ -52,12 +80,15 @@ public class Employee {
         this.rank = rank;
         this.team = team;
         this.role = role;
+        this.status = status;
         this.joinDate = joinDate;
+        this.expenses = expenses;
+        this.leaveRequest = leaveRequest;
     }
 
-    public Employee() {
-    }
+    public Employee() {}
 
+    // Getters and Setters
     public Long getId() {
         return id;
     }
@@ -130,6 +161,14 @@ public class Employee {
         this.role = role;
     }
 
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
     public Date getJoinDate() {
         return joinDate;
     }
@@ -137,5 +176,20 @@ public class Employee {
     public void setJoinDate(Date joinDate) {
         this.joinDate = joinDate;
     }
-}
 
+    public List<Expense> getExpenses() {
+        return expenses;
+    }
+
+    public void setExpenses(List<Expense> expenses) {
+        this.expenses = expenses;
+    }
+
+    public List<LeaveRequest> getLeaveRequest() {
+        return leaveRequest;
+    }
+
+    public void setLeaveRequest(List<LeaveRequest> leaveRequest) {
+        this.leaveRequest = leaveRequest;
+    }
+}

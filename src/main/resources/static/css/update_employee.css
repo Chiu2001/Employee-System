@@ -1,0 +1,79 @@
+/* 背景淺木紋漸層 */
+body {
+    background: linear-gradient(135deg, #f5f5dc, #d3b88c); /* 淺木紋漸層背景 */
+    color: #3e2723; /* 深棕色字體 */
+    min-height: 100vh; /* 使內容至少佔滿視窗 */
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.9); /* 白色半透明背景 */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* 減少陰影效果 */
+}
+
+h1, h2 {
+    color: #8d6e63; /* 淺棕色標題 */
+}
+
+label {
+    font-weight: bold; /* 加粗標籤 */
+    color: #3e2723; /* 深棕色字體 */
+}
+
+input[type="text"],
+input[type="date"],
+select {
+    background-color: #f5f5dc; /* 淺米色背景 */
+    color: #3e2723; /* 深棕色字體 */
+    border: 1px solid #d2c0a1; /* 淺棕色邊框 */
+    border-radius: 5px; /* 圓角邊框 */
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus,
+select:focus {
+    border-color: #8d6e63; /* 聚焦時使用淺棕色 */
+    box-shadow: 0 0 5px rgba(141, 110, 99, 0.5); /* 聚焦時的陰影效果 */
+}
+
+button {
+    background-color: #a1887f; /* 淺棕色按鈕 */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #8d6e63; /* 按鈕 hover 效果 */
+}
+
+hr {
+    border-top: 1px solid #8d6e63; /* 使用淺棕色的分隔線 */
+}
+
+a {
+    color: #3e2723; /* 深棕色鏈接 */
+    text-decoration: none; /* 移除下劃線 */
+}
+
+a:hover {
+    text-decoration: underline; /* 鼠標懸停時添加下劃線 */
+}
+
+/* 木紋按鈕樣式 */
+button {
+    background-color: #d1b89d; /* 淡棕色 */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #a67a52; /* 深棕色按鈕當滑鼠懸停時 */
+}
+

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Expense Form</title>
+
+    <!-- 引入 Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <!-- 引入自訂 CSS -->
+    <link rel="stylesheet" th:href="@{/css/expense-form.css}">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Expense Form</h1>
+        <hr>
+
+        <div th:if="${errorMessage}" style="color: red;">
+            <p th:text="${errorMessage}"></p>
+        </div>
+
+        <form th:action="@{/expenses/save}" th:object="${expense}" method="post">
+            <input type="hidden" th:field="*{id}" />
+
+            <!-- Category 和 Amount 同一排 -->
+            <div class="form-row mb-3">
+                <div class="form-group col-md-6">
+                    <label for="category">Category:</label>
+                    <select th:field="*{category}" class="form-control" required>
+                        <option value="" disabled selected>Select Category</option>
+                        <option th:each="categoryOption : ${category}" th:value="${categoryOption}"
+                            th:text="${categoryOption}"></option>
+                    </select>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="amount">Amount:</label>
+                    <input type="number" th:field="*{amount}" class="form-control" required
+                        placeholder="Enter amount" />
+                </div>
+            </div>
+
+            <!-- Expense Date 和 Team 同一排 -->
+            <div class="form-row mb-3">
+                <div class="form-group col-md-6">
+                    <label for="expenseDate">Expense Date:</label>
+                    <input type="date" th:field="*{expenseDate}" class="form-control" required />
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="employee">Employee:</label>
+                    <select th:field="*{team}" class="form-control" required>
+                        <option value="" disabled selected>Select a team</option>
+                        <th:block th:each="team : ${teams}">
+                            <option th:value="${team.id}" th:text="${team.name}"></option>
+                        </th:block>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Employee 和 Description 同一排 -->
+            <div class="form-row mb-3">
+                <div class="form-group col-md-6">
+                    <label for="employee">Employee:</label>
+                    <select th:field="*{employee}" class="form-control" required>
+                        <option value="" disabled selected>Select Employee</option>
+                        <th:block th:each="employee : ${employees}">
+                            <option th:value="${employee.id}" th:text="${employee.name}"></option>
+                        </th:block>
+                    </select>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="description">Description:</label>
+                    <textarea th:field="*{description}" class="form-control" rows="4"
+                        placeholder="Enter description"></textarea>
+                </div>
+            </div>
+
+            <!-- Payment Method 和 Status 同一排 -->
+            <div class="form-row mb-3">
+                <div class="form-group col-md-6">
+                    <label for="paymentMethod">Payment Method:</label>
+                    <select th:field="*{paymentMethod}" class="form-control" required>
+                        <option value="" disabled selected>Select Payment Method</option>
+                        <option th:each="payOption : ${payMethod}" th:value="${payOption}" th:text="${payOption}">
+                        </option>
+                    </select>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="status">Status:</label>
+                    <select th:field="*{status}" class="form-control" required>
+                        <option value="" disabled selected>Select Status</option>
+                        <option th:each="statusOption : ${status}" th:value="${statusOption}" th:text="${statusOption}">
+                        </option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- 保存按鈕 -->
+            <button type="submit" class="btn btn-primary">Save</button>
+
+        </form>
+
+        <hr>
+        <a th:href="@{/expenses}" class="btn btn-link">Back to Expense List</a>
+    </div>
+</body>
+
+</html>

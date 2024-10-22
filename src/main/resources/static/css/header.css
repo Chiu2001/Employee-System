@@ -1,0 +1,63 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #d19a6a; /* 木紋顏色 */
+    padding: 15px;
+    position: fixed; /* 固定在上方 */
+    top: 0;
+    width: 100%; /* 使 header 充滿整個寬度 */
+    z-index: 1000; /* 確保 header 在最上層 */
+}
+
+.nav-icon {
+    width: 24px; /* 設置圖標寬度 */
+    height: 24px; /* 設置圖標高度 */
+    vertical-align: middle; /* 確保圖標在行內居中對齊 */
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px; /* 每個項目之間的間距 */
+}
+
+li {
+    display: inline;
+}
+
+a {
+    text-decoration: none;
+    color: #ffffff; /* 字體顏色 */
+    font-weight: bold;
+}
+
+.logout-button {
+    background-color: #d19a6a; /* 木紋顏色作為背景 */
+    color: #ffffff; /* 文字顏色為白色 */
+    border: 2px solid #ffffff; /* 白色邊框 */
+    border-radius: 5px; /* 圓角邊框 */
+    padding: 10px 20px; /* 增加內邊距以增加按鈕大小 */
+    display: flex; /* 使按鈕內部內容使用 Flexbox */
+    align-items: center; /* 垂直居中對齊 */
+    gap: 10px; /* 圖標與文字之間的間距 */
+    cursor: pointer; /* 滑鼠指針樣式 */
+}
+
+.logout-button:hover {
+    background-color: #7b4e23; /* 懸停顏色 */
+    border-color: #7b4e23; /* 懸停時邊框顏色 */
+}
+
+

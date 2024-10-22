@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import java.util.Set;
 
 @Entity
-@Table(name = "rank")
+@Table(name = "level")
 public class Rank {
 
     @Id
@@ -19,6 +19,10 @@ public class Rank {
 
     @OneToMany(mappedBy = "rank", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<Employee> employees;
+
+    public Rank(){
+        
+    }
 
     public Rank(Long id, String name, String description, Set<Employee> employees) {
         this.id = id;

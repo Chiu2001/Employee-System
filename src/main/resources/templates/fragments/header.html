@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Header Fragment</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- 引入 Font Awesome -->
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="nav justify-content-between">
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/employee-list}">員工列表</a>
+                </li>
+                <!-- 僅當用戶是 HR 且角色為 admin 時才顯示支出列表 -->
+                <li class="nav-item" th:if="${#authentication != null and #authentication.principal.team == 'HR' or #authentication.principal.role == 'Admin'}">
+                    <a class="nav-link" th:href="@{/expenses}">支出列表</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/clock-in-out}">打卡系統</a>
+                </li>
+                <li class="nav-item"></li>
+                    <a class="nav-link" th:href="@{/leave-requests/list}">請假系統</a>
+                </li>
+                <li class="nav-item" style="margin-left: auto;">
+                    <form th:action="@{/logout}" method="post" class="d-inline">
+                        <button type="submit" class="btn logout-button">
+                            <img src="/icons/logout-icon.svg" alt="登出" class="nav-icon" style="width: 24px; height: 24px;"> 登出
+                        </button>
+                    </form>
+                </li>                
+            </ul>
+        </nav>
+    </header>
+</body>
+</html>
+
+
+
+
+
+
+

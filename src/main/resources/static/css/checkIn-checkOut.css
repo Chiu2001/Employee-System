@@ -1,0 +1,129 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #d19a6a; /* 木紋顏色 */
+    padding: 15px;
+    position: fixed; /* 固定在上方 */
+    top: 0;
+    width: 100%; /* 使 header 充滿整個寬度 */
+    z-index: 1000; /* 確保 header 在最上層 */
+}
+
+.nav-icon {
+    width: 24px; /* 設置圖標寬度 */
+    height: 24px; /* 設置圖標高度 */
+    vertical-align: middle; /* 確保圖標在行內居中對齊 */
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px; /* 每個項目之間的間距 */
+}
+
+li {
+    display: inline;
+}
+
+a {
+    text-decoration: none;
+    color: #ffffff; /* 字體顏色 */
+    font-weight: bold;
+}
+
+.logout-button {
+    background-color: #d19a6a; /* 木紋顏色作為背景 */
+    color: #ffffff; /* 文字顏色為白色 */
+    border: 2px solid #ffffff; /* 白色邊框 */
+    border-radius: 5px; /* 圓角邊框 */
+    padding: 10px 20px; /* 增加內邊距以增加按鈕大小 */
+    display: flex; /* 使按鈕內部內容使用 Flexbox */
+    align-items: center; /* 垂直居中對齊 */
+    gap: 10px; /* 圖標與文字之間的間距 */
+    cursor: pointer; /* 滑鼠指針樣式 */
+}
+
+.logout-button:hover {
+    background-color: #7b4e23; /* 懸停顏色 */
+    border-color: #7b4e23; /* 懸停時邊框顏色 */
+}
+
+/* 定義淺木紋背景 */
+body {
+    background: linear-gradient(135deg, #f5f5dc, #d3b88c); /* 淺灰色漸層背景 */
+    color: #3e2723; /* 字體使用深棕色 */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    color: #8d6e63; /* 使用棕色作為標題 */
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.9); /* 白色半透明背景 */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* 輕微陰影效果 */
+    width: 30%;  /* 寬度為 30% */
+    height: auto; /* 高度自適應 */
+    max-width: 500px; /* 設定最大寬度，防止在大螢幕上過於寬 */
+    max-height: 700px; /* 設定最大高度，保持長方形 */
+}
+
+label {
+    color: #8d6e63; /* 棕色標籤 */
+    font-weight: bold;
+}
+
+input[type="email"], input[type="password"], select {
+    background-color: #fde0b9; /* 淺米色背景 */
+    color: #4e342e; /* 深棕色文字 */
+    border: 1px solid #d7ccc8; /* 淺棕色邊框 */
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #bcaaa4; /* 淺棕色按鈕 */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    width: 100%;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #a1887f; /* 更深的棕色作為按鈕 hover 效果 */
+}
+
+.alert {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #d32f2f; /* 鮮紅色警告框 */
+    color: white;
+    border-radius: 5px;
+}
+
+.form-group {
+    margin-bottom: 20px; /* 增加每個表單組之間的間距 */
+}

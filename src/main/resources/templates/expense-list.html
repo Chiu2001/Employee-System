@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Expense List</title>
+
+    <!-- 引入 Bootstrap CSS -->
+    <link rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    
+    <!-- 引入自訂 CSS -->
+    <link rel="stylesheet" href="css/expense-list.css">
+</head>
+
+<body>
+    <div th:replace="fragments/header :: header"></div> <!-- 引入 header fragment -->
+
+    <div class="container my-5" style="margin-top: 80px;">
+        <h1 class="text-center mb-4">Expense List</h1>
+
+        <a href="/expenses/new" class="btn btn-primary btn-sm mb-3">Add Expense</a>
+
+        <table class="table table-striped table-responsive-md table-hover">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Team</th>
+                    <th>Employee</th>
+                    <th>Category</th>
+                    <th>Amount</th>
+                    <th>Description</th>
+                    <th>Date</th>
+                    <th>Payment Method</th>
+                    <th>Status</th>
+                    <th>CreatedAt</th>
+                    <th>UpdatedAt</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="expense : ${expenses}">
+                    <td th:text="${expense.id}"></td>
+                    <td th:text="${expense.employee.team.name}"></td> <!-- Team 名稱 -->
+                    <td th:text="${expense.employee.name}"></td> <!-- Employee 名稱 -->
+                    <td th:text="${expense.category}"></td>
+                    <td th:text="${expense.amount}"></td>
+                    <td th:text="${expense.description}"></td>
+                    <td th:text="${#dates.format(expense.expenseDate, 'yyyy-MM-dd')}"></td> <!-- 格式化日期 -->
+                    <td th:text="${expense.paymentMethod}"></td>
+                    <td th:text="${expense.status}"></td>
+                    <td th:text="${#dates.format(expense.createdAt, 'yyyy-MM-dd HH:mm:ss')}"></td> <!-- 格式化 CreatedAt -->
+                    <td th:text="${#dates.format(expense.updatedAt, 'yyyy-MM-dd HH:mm:ss')}"></td> <!-- 格式化 UpdatedAt -->
+                    <td><a th:href="@{/expenses/edit/{id}(id=${expense.id})}" class="btn btn-warning btn-sm">Edit</a></td>
+                    <td><a th:href="@{/expenses/delete/{id}(id=${expense.id})}" class="btn btn-danger btn-sm">Delete</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

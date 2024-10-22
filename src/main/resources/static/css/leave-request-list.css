@@ -1,0 +1,127 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #d19a6a; /* 木紋顏色 */
+    padding: 15px;
+    position: fixed; /* 固定在上方 */
+    top: 0;
+    width: 100%; /* 使 header 充滿整個寬度 */
+    z-index: 1000; /* 確保 header 在最上層 */
+    color: #ffffff; /* 確保 header 的字體顏色為白色 */
+}
+
+.nav-icon {
+    width: 24px; /* 設置圖標寬度 */
+    height: 24px; /* 設置圖標高度 */
+    vertical-align: middle; /* 確保圖標在行內居中對齊 */
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a {
+    color: #ffffff; /* 確保 nav 中的連結顏色為白色 */
+}
+
+nav a:hover {
+    color: #e0e0e0; /* 懸停時的顏色 */
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px; /* 每個項目之間的間距 */
+}
+
+li {
+    display: inline;
+}
+
+a {
+    text-decoration: none;
+    color: #ffffff; /* 字體顏色 */
+    font-weight: bold;
+}
+
+.logout-button {
+    background-color: #d19a6a; /* 木紋顏色作為背景 */
+    color: #ffffff; /* 文字顏色為白色 */
+    border: 2px solid #ffffff; /* 白色邊框 */
+    border-radius: 5px; /* 圓角邊框 */
+    padding: 10px 20px; /* 增加內邊距以增加按鈕大小 */
+    display: flex; /* 使按鈕內部內容使用 Flexbox */
+    align-items: center; /* 垂直居中對齊 */
+    gap: 10px; /* 圖標與文字之間的間距 */
+    cursor: pointer; /* 滑鼠指針樣式 */
+}
+
+.logout-button:hover {
+    background-color: #7b4e23; /* 懸停顏色 */
+    border-color: #7b4e23; /* 懸停時邊框顏色 */
+}
+
+/* 背景淺木紋漸層 */
+body {
+    background: linear-gradient(135deg, #f5f5dc, #d3b88c); /* 淺木紋漸層背景 */
+    color: #3e2723; /* 深棕色字體 */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h2 {
+    color: #8d6e63; /* 淺棕色標題 */
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.8); /* 白色半透明背景 */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* 減少陰影效果 */
+}
+
+.table {
+    background-color: #f5f5dc; /* 表格背景使用淺米色 */
+    color: #3e2723; /* 深棕色字體 */
+    border-radius: 10px;
+}
+
+.table thead th {
+    background-color: #d1b89d; /* 表頭使用淺棕色 */
+    color: #3e2723; /* 深棕色字體 */
+}
+
+.table tbody tr {
+    background-color: #f5f5dc; /* 表格內容使用淺米色 */
+}
+
+.table tbody tr:hover {
+    background-color: #d2c0a1; /* 滑過行時顏色變亮 */
+}
+
+.btn-primary {
+    background-color: #a1887f; /* 淺棕色按鈕 */
+    border: none;
+}
+
+.btn-danger {
+    background-color: #e57373; /* 鮮紅色按鈕 */
+    border: none;
+}
+
+.btn-primary:hover,
+.btn-danger:hover {
+    opacity: 0.9; /* 提供按鈕的 hover 效果 */
+}
